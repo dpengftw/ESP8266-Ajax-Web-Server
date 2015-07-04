@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Mobile</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .noshadow * {
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+        form.ui-mini .ui-field-contain fieldset.ui-controlgroup legend small {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" id="esp">
+
+    <div data-role="header">
+        <h1>ESP8266 Module</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+    <a href="#" onClick= "$.get( '/gpio2on', function( data ) {  });" class="ui-btn ui-shadow">GPIO2 On</a>
+    <a href="#" onClick= "$.get( '/gpio2off', function( data ) {  });" class="ui-btn ui-shadow">GPIO2 Off</a>
+    <a href="#" onClick= "$.get( '/gpio2toggle', function( data ) {  });" class="ui-btn ui-shadow">GPIO2 Toggle</a>
+    <a href="#" onClick= "$.get( '/tempf', function( data ) { $('#temp').text('Get Temperature: ' + data + '&deg;F'); });" class="ui-btn ui-shadow" id="temp">Get Temperature</a>
+    </div>
+    
+</div>
+</body>
+</html>
